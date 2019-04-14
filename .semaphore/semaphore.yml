@@ -21,7 +21,7 @@ agent:
 # commands to execute.
 # See https://docs.semaphoreci.com/article/62-concepts
 blocks:
-  - name: Install dependencies
+  - name: Installing dependencies
     task:
       # Set environment variables that your project requires.
       # See https://docs.semaphoreci.com/article/66-environment-variables-and-secrets
