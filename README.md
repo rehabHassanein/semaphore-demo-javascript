@@ -4,7 +4,7 @@ Example application and CI/CD pipeline showing how to run a JavaScript project
 on Semaphore 2.0. Project consists of a Node.js server based on Nest.js, and a
 React client. Code is written in TypeScript.
 
-## CI/CD on Semaphore 
+## CI/CD on Semaphore
 
 Fork this repository and use it to [create a
 project](https://docs.semaphoreci.com/article/63-your-first-project).
