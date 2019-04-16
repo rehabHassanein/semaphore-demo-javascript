@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/semaphore-demo-javascript/precache-manifest.87d98812642800b69361eedbd880103b.js"
+  "/semaphore-demo-javascript/precache-manifest.5e1a0ab3b4d64cc1925a0641174d01d2.js"
 );
 
 workbox.clientsClaim();
