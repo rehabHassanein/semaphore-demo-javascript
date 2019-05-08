@@ -17,7 +17,7 @@ spec:
           image: gcr.io/$GCP_PROJECT_ID/semaphore-demo-javascript-server:$SEMAPHORE_WORKFLOW_ID
           env:
             - name: NODE_ENV
-              value: "development"
+              value: "production"
 
 ---
 
