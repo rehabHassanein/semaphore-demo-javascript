@@ -24,6 +24,13 @@ blocks:
       jobs:
         - name: Deploy to Google Cloud Storage
           commands:
+            # Authenticate using the file injected from the secret
+            - gcloud auth activate-service-account --key-file=~/.secrets.gcp.json
+            # Don't forget -q to silence confirmation prompts
+            - gcloud auth configure-docker -q
+            - gcloud config set project $GCP_PROJECT_ID
+            - gcloud config set compute/zone $GCP_PROJECT_DEFAULT_ZONE
+
             - cd src/client
 
             # Restore dependencies from cache.
@@ -33,11 +40,5 @@ blocks:
             # Restore build from cache.
             - cache restore client-build-$SEMAPHORE_WORKFLOW_ID
 
-            # Authenticate using the file injected from the secret
-            - gcloud auth activate-service-account --key-file=.secrets.gcp.json
-            # Don't forget -q to silence confirmation prompts
-            - gcloud auth configure-docker -q
-            - gcloud config set project $GCP_PROJECT_ID
-            - gcloud config set compute/zone $GCP_PROJECT_DEFAULT_ZONE
-   
+            # Deploy to Google Cloud Storage
             - gsutil -m rsync -r build gs://rhea90s
