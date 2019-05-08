@@ -17,11 +17,7 @@ blocks:
       secrets:
         - name: gc-k8s-secret
         - name: gcr-secret
-      prologue:
-        commands:
-          # Get the latest version of our source code from GitHub:
-          - checkout --use-cache
-      jobs:
+     jobs:
         - name: Deploy to Google Cloud Storage
           commands:
             # Authenticate using the file injected from the secret
@@ -31,6 +27,9 @@ blocks:
             - gcloud config set project $GCP_PROJECT_ID
             - gcloud config set compute/zone $GCP_PROJECT_DEFAULT_ZONE
 
+            # Get the latest version of our source code from GitHub:
+            - checkout --use-cache
+ 
             - cd src/client
 
             # Restore dependencies from cache.
