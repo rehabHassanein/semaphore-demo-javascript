@@ -17,7 +17,7 @@ blocks:
       secrets:
         - name: gc-k8s-secret
         - name: gcr-secret
-     jobs:
+    jobs:
         - name: Deploy to Google Cloud Storage
           commands:
             # Authenticate using the file injected from the secret
