@@ -40,4 +40,4 @@ blocks:
             - cache restore client-build-$SEMAPHORE_WORKFLOW_ID
 
             # Deploy to Google Cloud Storage
-            - gsutil -m rsync -r build gs://rhea90s
+            - gsutil -m rsync -r build gs://rhea90s/semaphore-demo-javascript
